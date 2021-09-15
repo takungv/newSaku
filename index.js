@@ -10,6 +10,8 @@ const i18n = require("i18n");
 
 
 const client = new Client({
+    TOKEN: process.env.TOKEN,
+    PREFIX: process.env.PREFIX,
     disableMentions: "everyone",
     restTimeOffset: 0
 });
