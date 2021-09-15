@@ -7,20 +7,20 @@ const { join } = require("path");
 const { TOKEN, LOCALE } = require("./util/EvobotUtil");
 const path = require("path");
 const i18n = require("i18n");
-const PREFIX = process.env.PREFIX;
+
 
 
 
 const client = new Client({
     owner: process.env.ownerID,
-
+    //PREFIX: process.env.PREFIX,
     disableMentions: "everyone",
     restTimeOffset: 0
 });
 
 client.login(process.env.TOKEN);
 client.commands = new Collection();
-client.prefix = PREFIX;
+client.prefix = process.env.PREFIX;
 client.queue = new Map();
 const cooldowns = new Collection();
 const escapeRegex = (str) => str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
